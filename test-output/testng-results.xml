@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="14470" started-at="2017-05-26T13:06:11Z" finished-at="2017-05-26T13:06:25Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="14470" started-at="2017-05-26T13:06:11Z" finished-at="2017-05-26T13:06:25Z">
+      <class name="com.google.test.GoogleTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.google.test.GoogleTest@548e7350]" name="setUp" is-config="true" duration-ms="5120" started-at="2017-05-26T16:06:11Z" finished-at="2017-05-26T16:06:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="googleSearchTextByClick()[pri:0, instance:com.google.test.GoogleTest@548e7350]" name="googleSearchTextByClick" duration-ms="2475" started-at="2017-05-26T16:06:16Z" finished-at="2017-05-26T16:06:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleSearchTextByClick -->
+        <test-method status="PASS" signature="googleSearchTextByEnter()[pri:0, instance:com.google.test.GoogleTest@548e7350]" name="googleSearchTextByEnter" duration-ms="1817" started-at="2017-05-26T16:06:18Z" finished-at="2017-05-26T16:06:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleSearchTextByEnter -->
+        <test-method status="PASS" signature="googleSignInWrongEmail()[pri:0, instance:com.google.test.GoogleTest@548e7350]" name="googleSignInWrongEmail" duration-ms="1770" started-at="2017-05-26T16:06:20Z" finished-at="2017-05-26T16:06:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleSignInWrongEmail -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.google.test.GoogleTest@548e7350]" name="tearDown" is-config="true" duration-ms="3269" started-at="2017-05-26T16:06:22Z" finished-at="2017-05-26T16:06:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.google.test.GoogleTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
