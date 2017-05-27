@@ -8,9 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
+	public static final String BASE_URL = "https://www.google.com/ncr";
 	protected WebDriver driver;
-	protected String baseURL = "https://www.google.com/ncr";
-	protected long timeOutInSeconds = 10;
+	protected static final int TIME_OUT = 10;
 	
 	protected WebDriver getDriver() {
 		return driver;
@@ -22,6 +22,6 @@ public class BasePage {
 	}
 	
 	public WebElement assertThat(ExpectedCondition<WebElement> condition) {
-		return (new WebDriverWait(driver, timeOutInSeconds)).until(condition);
+		return (new WebDriverWait(driver, TIME_OUT)).until(condition);
 	}
 }

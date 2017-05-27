@@ -8,22 +8,34 @@ public class GoogleTest extends BaseTest {
   
 	@Test
 	public void googleSearchTextByEnter() {
+		//Test
 		GoogleHomePage homePage = new GoogleHomePage(getDriver());
 		GoogleSearchResultsPage resultPage = homePage.searchByEnter("Selenium");
-		assertEquals(resultPage.getFirstLinkText(), "Selenium - Web Browser Automation");
+		//Check
+		String expectedResult = "Selenium - Web Browser Automation";
+		String actualResult = resultPage.getLinkTextByNumber(0);
+		assertEquals(actualResult, expectedResult);
 	}
 	
 	@Test
 	public void googleSearchTextByClick() {
+		//Test
 		GoogleHomePage homePage = new GoogleHomePage(getDriver());
 		GoogleSearchResultsPage resultPage = homePage.searchByClick("Selenium");
-		assertEquals(resultPage.getFirstLinkText(), "Selenium - Web Browser Automation");
+		//Check
+		String expectedResult = "Selenium - Web Browser Automation";
+		String actualResult = resultPage.getLinkTextByNumber(0);
+		assertEquals(actualResult, expectedResult);
 	}
 	
 	@Test
 	public void googleSignInWrongEmail() {
+		//Test
 		GoogleHomePage homePage = new GoogleHomePage(getDriver());
 		GoogleSignInPage signInPage = homePage.clickOnSignInButton().inputEmail("selenium@selenium.org");
-		assertEquals(signInPage.getEmailStatus(), "Couldn't find your Google Account");
+		//Check
+		String expectedResult = "Couldn't find your Google Account";
+		String actualResult = signInPage.getEmailStatus();
+		assertEquals(actualResult, expectedResult);
 	}
 }

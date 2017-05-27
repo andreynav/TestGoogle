@@ -19,14 +19,19 @@ public class GoogleHomePage extends BasePage {
 		super(driver);
 	}
 	
+	public GoogleHomePage getGoogleHomePage() {
+        driver.get(BASE_URL);
+        return new GoogleHomePage(driver);
+    }
+	
 	public GoogleSearchResultsPage searchByEnter(String text) {
-		driver.get(baseURL);
+		getGoogleHomePage();
 		fieldSearch.sendKeys(text, Keys.ENTER);
 		return new GoogleSearchResultsPage(driver);
 	}
 
 	public GoogleSearchResultsPage searchByClick(String text) {
-		driver.get(baseURL);
+		getGoogleHomePage();
 		fieldSearch.sendKeys(text);
 		buttonSearch.click();
 		return new GoogleSearchResultsPage(driver);
