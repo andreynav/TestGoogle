@@ -7,25 +7,31 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.google.pages.GoogleHomePage;
+
 public class BaseTest {
 	
 	protected WebDriver driver;
 
-	protected WebDriver getDriver() {
-		return driver;
+	public GoogleHomePage homePage() {
+		return new GoogleHomePage(driver);
 	}
 	
 	@BeforeTest
 	public void setUp() {
-		initializeDriver();
-		setPropertyWindow();
-		setPropertyTimeOut();
+		if (driver == null) {
+			initializeDriver();
+			setPropertyWindow();
+			setPropertyTimeOut();
+		}
 	}
 	
 	@AfterTest
 	public void tearDown() {
 		delay(3000);
-		driver.close();
+		if (driver != null) {
+			driver.close();
+		}
 	}
 	
 	public void initializeDriver() {

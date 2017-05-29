@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-	public static final String BASE_URL = "https://www.google.com/ncr";
 	protected WebDriver driver;
 	protected static final int TIME_OUT = 10;
+	public static final String BASE_URL = "https://www.google.com/ncr";
 	
-	protected WebDriver getDriver() {
+	public WebDriver getDriver() {
 		return driver;
 	}
 	
