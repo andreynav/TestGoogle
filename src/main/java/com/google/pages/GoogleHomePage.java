@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import static com.google.test.SeleniumDriver.getDriver;
 
 public class GoogleHomePage extends BasePage {
 
@@ -20,25 +21,25 @@ public class GoogleHomePage extends BasePage {
 	}
 	
 	public GoogleHomePage getGoogleHomePage() {
-        driver.get(BASE_URL);
-        return new GoogleHomePage(driver);
+		getDriver().get(BASE_URL);
+        return new GoogleHomePage(getDriver());
     }
 	
 	public GoogleSearchResultsPage searchByEnter(String text) {
 		getGoogleHomePage();
 		fieldSearch.sendKeys(text, Keys.ENTER);
-		return new GoogleSearchResultsPage(driver);
+		return new GoogleSearchResultsPage(getDriver());
 	}
 
 	public GoogleSearchResultsPage searchByClick(String text) {
 		getGoogleHomePage();
 		fieldSearch.sendKeys(text);
 		buttonSearch.click();
-		return new GoogleSearchResultsPage(driver);
+		return new GoogleSearchResultsPage(getDriver());
 	}
 	
 	public GoogleSignInPage clickOnSignInButton() {
 		buttonSignIn.click();
-		return new GoogleSignInPage(driver);
+		return new GoogleSignInPage(getDriver());
 	}
 }

@@ -5,23 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static com.google.test.SeleniumDriver.getDriver;
 
 public class BasePage {
 
-	protected WebDriver driver;
 	protected static final int TIME_OUT = 10;
 	public static final String BASE_URL = "https://www.google.com/ncr";
 	
-	public WebDriver getDriver() {
-		return driver;
-	}
-	
 	public BasePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public WebElement assertThat(ExpectedCondition<WebElement> condition) {
-		return (new WebDriverWait(driver, TIME_OUT)).until(condition);
+		return (new WebDriverWait(getDriver(), TIME_OUT)).until(condition);
 	}
 }
